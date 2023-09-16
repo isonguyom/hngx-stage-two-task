@@ -51,13 +51,13 @@ function MovieCard(props) {
         <img className="movie-poster" src={props.movie.poster_path} alt={props.movie.title} data-testid="movie-poster" />
         </Link>
         <div className="movie-decription">
-          <p className="movie-prodution"><span>{ props.movie.original_language }</span>, <span data-testid="movie-release-date">{ props.movie.release_date}</span></p>
+          <p className="movie-prodution faint"><span>USA</span>, <span data-testid="movie-release-date">{ props.movie.release_date}</span></p>
           <h4 className="movie-title" data-testid="movie-title">{ props.movie.title }</h4>
           <div className="movie-rating">
-            <span className="imdb-rating">{props.movie.vote_average / 10 * 100}/100</span>
+            <span className="imdb-rating">86.0/100</span>
             <span className="tomatoes-rating">97%</span>
           </div>
-          <p className="movie-tags">Action, Adventure, Horror</p>
+          <p className="movie-tags faint">Action, Adventure, Horror</p>
         </div>
       </div>
     )
@@ -92,7 +92,7 @@ function Movies() {
     return (
   <section className="Home-movies-wrapper">
     <div className="movies-wrapper-header">
-      <h3>Featured Movie</h3>
+      <h1>Featured Movie</h1>
       <a className="see-more-link" href="https//">See more</a>
     </div>
     <div className="movies-grid">
@@ -116,7 +116,7 @@ function Footer() {
       <a href="https//">Policy & Privacy</a>
       <a href="https//">Press Room</a>
     </div>
-    <p className="Footer-copyright">© 2021 MovieBox by Adriana Eka Prayudha </p>
+    <p className="Footer-copyright faint">© 2021 MovieBox by Adriana Eka Prayudha </p>
   </footer>
     )
 }
