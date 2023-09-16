@@ -122,19 +122,26 @@ border: 1px solid red;
 
 .Details {
   display: flex;
+  min-height: 100vh;
 }
 
 .Details-sidenav {
   width: 20%;
-  border: 1px solid gray;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  padding: 20px 0;
+  border: 1px solid rgb(192, 191, 191);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 40px 0;
   text-align: center;
+  display: none;
+}
+
+.logo-wrapper {
+  padding: 0 5%;
 }
 
 .sidenav-menu {
   list-style: none;
+  padding: 40px 0;
 }
 
 
@@ -142,23 +149,41 @@ border: 1px solid red;
   display: block;
   color: inherit;
   text-decoration: none;
-  padding: 15px 0;
-  border: 1px solid red;
+  padding: 20px 0;
+  /* border: 1px solid red; */
 }
 
 .sidenav-ads {
-  padding: 20px 3%;
+  padding: 40px 5%;
 }
 
 .ads-block {
-  border: 1px solid red;
+  border: 1px solid #BE123C;
+  background-color: #f0ced7;
   text-align: left;
-  border-radius: 7px;
+  border-radius: 15px;
+  padding: 50px 5% 20px;
+}
+
+.ads-text {
+  margin: 10px 0;
+}
+
+.ads-start-btn {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  color: #BE123C;
+  background-color: #e77f99;
+  text-decoration: none;
+  border-radius: 20px;
 }
 
 .logout-btn {
   border: none;
   background: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
 }
 
 .Details-main {
@@ -186,10 +211,14 @@ border: 1px solid red;
   display: inline-block;
   padding: 5px 1em;
   text-decoration: none;
-  border: 1px solid gray;
-  color: red;
+  border: 1px solid rgb(202, 202, 202);
+  color: #BE123C;
   border-radius: 20px;
   margin: 0 1em;
+}
+
+.movie-overview {
+  margin-top: 20px;
 }
 
 .movie-meta {
@@ -198,11 +227,11 @@ border: 1px solid red;
 
 .movie-meta .meta-value {
   text-decoration: none;
-  color: red;
+  color: #BE123C;
 }
 
 .meta-tabs {
-border: 1px solid gray;
+border: 1px solid rgb(182, 181, 181);
 border-radius: 7px;
 }
 
@@ -215,7 +244,7 @@ border-radius: 7px;
 }
 
 .rating-tab {
-  background-color: red;
+  background-color: #BE123C;
   color: white;
 }
 
@@ -223,10 +252,14 @@ border-radius: 7px;
   text-align: right;
 }
 
+.movie-suggestions {
+  padding-left: 30px;
+}
+
 .suggestions-tab {
   border-radius: 7px;
   display: block;
-  padding: 7px 0.5em;
+  padding: 5px 0.5em;
   text-decoration: none;
   color: inherit;
   text-align: center;
@@ -235,18 +268,18 @@ border-radius: 7px;
 }
 
 .suggestions-tab.see-tab {
-  background-color: red;
+  background-color: #BE123C;
   color: white;
-  margin-bottom: 10px;
+  margin: 25px 0 10px;
 }
 
 .suggestions-tab.more-tab {
-  background-color: rgb(235, 164, 164);
-  border: 1px solid red;
+  background-color: rgb(231, 189, 189);
+  border: 1px solid #BE123C;
 }
 
 .suggestion-movies {
-  margin-top: 20px;
+  margin-top: 30px;
   display: grid;
   grid-template-columns: auto auto auto;
   column-gap: 0.5em;
@@ -302,6 +335,10 @@ min-width: 400px;
     grid-template-columns: auto auto auto;
 
   }
+
+  .Details-sidenav {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 1024px)  {
@@ -332,5 +369,9 @@ min-width: 400px;
   .movies-grid {
   display: inline-grid;
   grid-template-columns: auto auto auto auto;
+}
+
+.Details-sidenav {
+  width: 30%;
 }
 }

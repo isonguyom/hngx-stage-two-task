@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import logo from "../logo_white.png"
+import logo from "../logo_white.svg"
 import johnWickPoster from "../Poster.png"
 
 function Header() {
