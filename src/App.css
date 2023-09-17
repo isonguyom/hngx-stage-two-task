@@ -17,6 +17,8 @@
   margin: 20px 0;
   position: relative;
   height: fit-content;
+  width: 100%;
+  max-width: 400px;
 }
 
 .search-input {
@@ -25,7 +27,6 @@
   border-radius: 5px;
   background: transparent;
   width: 100%;
-  max-width: 400px;
   position: relative;
 }
 
@@ -40,7 +41,7 @@
   font-size: 1rem;
   position: absolute;
   top: 50%;
-  left: -5%;
+  right: 3%;
   transform: translateY(-50%);
   height: fit-content;
   width: fit-content;
@@ -55,6 +56,8 @@
   border: none;
   background: transparent;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .signin-btn span {
@@ -110,10 +113,20 @@
   font-weight: 700;
   text-decoration: none;
   padding: 12px 30px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: fit-content;
   border-radius: 5px;
   margin-top: 18px;
+}
+
+.icon-text-right {
+  margin-left: 1em;
+}
+
+.icon-text-left {
+  margin-right: 1em;
 }
 
 .hero-pagination {
@@ -121,7 +134,7 @@
   display: flex;
   bottom: 0;
   right: 50%;
-  transform: translateX(-50%);
+  transform: translateX(50%);
   width: fit-content;
 }
 
@@ -137,7 +150,7 @@
 }
 
 .Home-movies-wrapper {
-  padding: 40px 5%;
+  padding: 70px 5%;
 }
 
 .see-more-link {
@@ -159,8 +172,34 @@
   margin-top: 10px;
 }
 
+.poster-wrapper {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.fav-btn {
+  background-color: #ffffff80;
+  color: green;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 0;
+  position: absolute;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.fav-btn:hover, .fav-btn.add {
+  background-color: #e77f99;
+  color: #be123c;
+}
+
 .movie-decription {
-  margin-top: 7px;
+  margin-top: 10px;
 }
 
 .movie-tags {
@@ -168,7 +207,7 @@
 }
 
 .movie-title {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .movies-wrapper-header,
@@ -178,9 +217,9 @@
   align-items: center;
 }
 
-/* .Movie-card {
-border: 1px solid red;
-} */
+.movies-wrapper-header {
+  margin-bottom: 30px;
+}
 
 .Home-footer {
   text-align: center;

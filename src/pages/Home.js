@@ -4,6 +4,12 @@ import logo from "../logo_white.svg"
 import johnWickPoster from "../Poster.png"
 import {HiMiniBars2} from "react-icons/hi2"
 import {HiOutlineSearch} from "react-icons/hi"
+import {IoIosArrowForward} from "react-icons/io"
+import {BsFillSuitHeartFill} from "react-icons/bs"
+import {FaSquareFacebook} from "react-icons/fa6"
+import {AiOutlineInstagram} from "react-icons/ai"
+import {BsFillPlayCircleFill} from "react-icons/bs"
+import cardImage from "../card_img.png"
 
 function MovieSearch() {
   const [query, setQuery] = useState('');
@@ -72,7 +78,7 @@ function Hero() {
             assassins guild, and with a $14 million price tag on his head, he is
             the target of hit men and women everywhere.
           </p>
-          <a className="watch-link" href="https//">WATCH TRAILER</a>
+          <a className="watch-link" href="https//"><BsFillPlayCircleFill/> <span className="icon-text-right">WATCH TRAILER</span></a>
         </div>
       </div>
       <div className="hero-pagination">
@@ -89,12 +95,13 @@ function Hero() {
 function MovieCard(props) {
     return (
         <div className="Movie-card" data-testid="movie-card">
-        <Link to={`/movies/${props.movie.id}`}>
-        <img className="movie-poster" src={props.movie.poster_path} alt={props.movie.title} data-testid="movie-poster" />
+        <Link className="poster-wrapper" to={`/movies/${props.movie.id}`}>
+        <img className="movie-poster" src={cardImage} alt={props.movie.title} data-testid="movie-poster" />
+        <button className="fav-btn"><BsFillSuitHeartFill /></button>
         </Link>
         <div className="movie-decription">
           <p className="movie-prodution faint"><span>USA</span>, <span data-testid="movie-release-date">{ props.movie.release_date}</span></p>
-          <h4 className="movie-title" data-testid="movie-title">{ props.movie.title }</h4>
+          <h3 className="movie-title" data-testid="movie-title">{ props.movie.title }</h3>
           <div className="movie-rating">
             <span className="imdb-rating">86.0/100</span>
             <span className="tomatoes-rating">97%</span>
@@ -135,7 +142,7 @@ function Movies() {
   <section className="Home-movies-wrapper">
     <div className="movies-wrapper-header">
       <h1>Featured Movie</h1>
-      <a className="see-more-link" href="https//">See more</a>
+      <a className="see-more-link" href="https//"><span>See more</span> <span><IoIosArrowForward/></span></a>
     </div>
     <div className="movies-grid">
     { topMovies.map((movie) => <MovieCard key={ movie.id } movie={ movie } />)}
@@ -148,8 +155,8 @@ function Footer() {
     return (
   <footer className="Home-footer">
     <div className="Footer-socials">
-      <a href="https//">Facebook</a>
-      <a href="https//">Instagram</a>
+      <a href="https//"><FaSquareFacebook /></a>
+      <a href="https//"><AiOutlineInstagram/></a>
       <a href="https//">Twitter</a>
       <a href="https//">Youtube</a>
     </div>
