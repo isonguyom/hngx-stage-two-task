@@ -16,7 +16,7 @@ z-index: 1;
 }
 
 .search-input {
-  padding: 0 15px;
+  padding: 10px 15px;
   border: 1px solid #fff;
   border-radius: 5px;
   background: transparent;
@@ -94,6 +94,18 @@ z-index: 1;
   margin-top: 10px;
 }
 
+.movie-decription {
+  margin-top: 7px;
+}
+
+.movie-tags {
+  margin-top: 10px;
+}
+
+.movie-title {
+  margin: 10px 0;
+}
+
 
 .movies-wrapper-header, .movie-rating {
   display: flex;
@@ -116,8 +128,8 @@ border: 1px solid red;
   margin-right: 2em;
 }
 
-.Footer-socials {
-  margin-bottom: 20px;
+.Footer-links {
+  margin: 20px 0;
 }
 
 .Details {

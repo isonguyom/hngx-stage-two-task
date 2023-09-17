@@ -3,12 +3,58 @@ import { Link } from "react-router-dom";
 import logo from "../logo_white.svg"
 import johnWickPoster from "../Poster.png"
 
+function MovieSearch() {
+  const [query, setQuery] = useState('');
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    if (query) {
+      const apiKey = "157f8b6f3dd6720eb58c49ebb5454947";
+
+      fetch(`https://api.themoviedb.org/3/search/movie/?query=${query}&api_key=${apiKey}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setMovies(data.results);
+        })
+        .catch((error) => {
+          console.error('There was a problem with the fetch operation:', error);
+        });
+    } else {
+      setMovies([]);
+    }
+  }, [query]);
+
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  return (
+    <div className="Movie-search">
+      <input
+      className="search-input" type="text" placeholder="What do you want to watch?"
+        value={query}
+        onChange={handleInputChange}
+      />
+      <ul>
+        {movies.map((movie) => (
+          <li key={movie.id}>{movie.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function Header() {
     return (
   <header className="Home-header">
     <div className="Home-header-items">
       <span><img src={logo} alt="Logo" /></span>
-      <input className="search-input" type="text" placeholder="What do you want to watch?" />
+      <MovieSearch />
       <button className="signin-btn">Sign in</button>
     </div>
   </header>
@@ -69,7 +115,7 @@ function Movies() {
     useEffect(() => {
       // Fetch top ten movies from TMDB API
       const fetchTopMovies = async () => {
-        const apiKey = "157f8b6f3dd6720eb58c49ebb5454947"; // Replace with your TMDB API key
+        const apiKey = "157f8b6f3dd6720eb58c49ebb5454947";
         try {
             const response = await fetch(
               `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
