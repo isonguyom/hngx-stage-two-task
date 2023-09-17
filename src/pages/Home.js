@@ -9,7 +9,11 @@ import {BsFillSuitHeartFill} from "react-icons/bs"
 import {FaSquareFacebook} from "react-icons/fa6"
 import {AiOutlineInstagram} from "react-icons/ai"
 import {BsFillPlayCircleFill} from "react-icons/bs"
-import cardImage from "../card_img.png"
+import {AiOutlineTwitter} from "react-icons/ai"
+import { AiFillYoutube } from "react-icons/ai";
+// import cardImage from "../card_img.png"
+import imdb from "../imbd.svg"
+import rotenTomatoes from "../roten_tomatoes.svg"
 
 function MovieSearch() {
   const [query, setQuery] = useState('');
@@ -70,8 +74,8 @@ function Hero() {
         <div className="hero-description">
           <h1 className="hero-title">John Wick 3 : Parabellum</h1>
           <div className="hero-rating">
-            <span className="imdb-rating">86.0/100</span>
-            <span className="tomatoes-rating">97%</span>
+            <span className="imdb-rating"><img src={imdb} alt="imdb" /> <span className="icon-text-right">86.0/100</span></span>
+            <span className="tomatoes-rating"><img src={rotenTomatoes} alt="Tomatoes" /><span className="icon-text-right">97%</span></span>
           </div>
           <p class="hero-overview">
             John Wick is on the run after killing a member of the international
@@ -96,15 +100,15 @@ function MovieCard(props) {
     return (
         <div className="Movie-card" data-testid="movie-card">
         <Link className="poster-wrapper" to={`/movies/${props.movie.id}`}>
-        <img className="movie-poster" src={cardImage} alt={props.movie.title} data-testid="movie-poster" />
         <button className="fav-btn"><BsFillSuitHeartFill /></button>
+        <img className="movie-poster" src={props.movie.poster_path} alt={props.movie.title} data-testid="movie-poster" />
         </Link>
         <div className="movie-decription">
           <p className="movie-prodution faint"><span>USA</span>, <span data-testid="movie-release-date">{ props.movie.release_date}</span></p>
           <h3 className="movie-title" data-testid="movie-title">{ props.movie.title }</h3>
           <div className="movie-rating">
-            <span className="imdb-rating">86.0/100</span>
-            <span className="tomatoes-rating">97%</span>
+          <span className="imdb-rating"><img src={imdb} alt="imdb" /> <span className="icon-text-right">86.0/100</span></span>
+          <span className="tomatoes-rating"><img src={rotenTomatoes} alt="Tomatoes" /><span className="icon-text-right">97%</span></span>
           </div>
           <p className="movie-tags faint">Action, Adventure, Horror</p>
         </div>
@@ -142,7 +146,7 @@ function Movies() {
   <section className="Home-movies-wrapper">
     <div className="movies-wrapper-header">
       <h1>Featured Movie</h1>
-      <a className="see-more-link" href="https//"><span>See more</span> <span><IoIosArrowForward/></span></a>
+      <a className="see-more-link" href="https//"><span className="icon-text-left">See more</span> <IoIosArrowForward/></a>
     </div>
     <div className="movies-grid">
     { topMovies.map((movie) => <MovieCard key={ movie.id } movie={ movie } />)}
@@ -157,8 +161,8 @@ function Footer() {
     <div className="Footer-socials">
       <a href="https//"><FaSquareFacebook /></a>
       <a href="https//"><AiOutlineInstagram/></a>
-      <a href="https//">Twitter</a>
-      <a href="https//">Youtube</a>
+      <a href="https//"><AiOutlineTwitter /></a>
+      <a href="https//"><AiFillYoutube /></a>
     </div>
     <div className="Footer-links">
       <a href="https//">Conditions of Use</a>

@@ -103,6 +103,11 @@
   font-size: 0.8rem;
 }
 
+.imdb-rating, .tomatoes-rating {
+  display: inline-flex;
+  align-items: center;
+}
+
 .imdb-rating {
   margin-right: 2em;
 }
@@ -122,11 +127,11 @@
 }
 
 .icon-text-right {
-  margin-left: 1em;
+  margin-left: 0.5em;
 }
 
 .icon-text-left {
-  margin-right: 1em;
+  margin-right: 0.5em;
 }
 
 .hero-pagination {
@@ -156,6 +161,9 @@
 .see-more-link {
   text-decoration: none;
   color: #be123c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .faint {
@@ -174,23 +182,25 @@
 
 .poster-wrapper {
   position: relative;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
 }
 
 .fav-btn {
   background-color: #ffffff80;
-  color: green;
+  color: #fff;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   border: 0;
   position: absolute;
   right: 5%;
+  bottom: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  z-index: 1;
 }
 
 .fav-btn:hover, .fav-btn.add {
@@ -224,12 +234,17 @@
 .Home-footer {
   text-align: center;
   margin-top: 70px;
+  padding-bottom: 40px;
 }
 
 .Home-footer a {
   color: inherit;
   text-decoration: none;
   margin-right: 2em;
+}
+
+.Footer-socials {
+  font-size: 1.7rem;
 }
 
 .Footer-links {
