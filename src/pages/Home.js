@@ -2,44 +2,40 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../logo_white.svg"
 import johnWickPoster from "../Poster.png"
+import {HiMiniBars2} from "react-icons/hi2"
+import {HiOutlineSearch} from "react-icons/hi"
 
 function MovieSearch() {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
-    if (query) {
-      const apiKey = "157f8b6f3dd6720eb58c49ebb5454947";
+  const searchMovies = () => {
+    const apiKey = "157f8b6f3dd6720eb58c49ebb5454947";
+    const API_URL = `https://api.themoviedb.org/3/search/movie/?query=${query}&api_key=${apiKey}`;
 
-      fetch(`https://api.themoviedb.org/3/search/movie/?query=${query}&api_key=${apiKey}`)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then((data) => {
-          setMovies(data.results);
-        })
-        .catch((error) => {
-          console.error('There was a problem with the fetch operation:', error);
-        });
-    } else {
-      setMovies([]);
-    }
-  }, [query]);
-
-  const handleInputChange = (e) => {
-    setQuery(e.target.value);
+    fetch(API_URL)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setMovies(data.results);
+      })
+      .catch((error) => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
   };
 
   return (
     <div className="Movie-search">
       <input
-      className="search-input" type="text" placeholder="What do you want to watch?"
+       className="search-input" type="text" placeholder="What do you want to watch?"
         value={query}
-        onChange={handleInputChange}
+        onChange={(e) => setQuery(e.target.value)}
       />
+      <button className="search-btn" onClick={searchMovies}><HiOutlineSearch /></button>
       <ul>
         {movies.map((movie) => (
           <li key={movie.id}>{movie.title}</li>
@@ -55,7 +51,7 @@ function Header() {
     <div className="Home-header-items">
       <span><img src={logo} alt="Logo" /></span>
       <MovieSearch />
-      <button className="signin-btn">Sign in</button>
+      <button className="signin-btn">Sign in <span><HiMiniBars2 /></span></button>
     </div>
   </header>
     )
@@ -63,7 +59,7 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="Home-hero" style={{background: `url(${johnWickPoster})`}}>
+    <section className="Home-hero" style={{background: `url(${johnWickPoster})`, backgroundSize: "cover"}}>
       <div className="Home-hero-item">
         <div className="hero-description">
           <h1 className="hero-title">John Wick 3 : Parabellum</h1>
@@ -71,7 +67,7 @@ function Hero() {
             <span className="imdb-rating">86.0/100</span>
             <span className="tomatoes-rating">97%</span>
           </div>
-          <p>
+          <p class="hero-overview">
             John Wick is on the run after killing a member of the international
             assassins guild, and with a $14 million price tag on his head, he is
             the target of hit men and women everywhere.
@@ -82,7 +78,7 @@ function Hero() {
       <div className="hero-pagination">
         <div>1</div>
         <div>2</div>
-        <div>3</div>
+        <div className="active">3</div>
         <div>4</div>
         <div>5</div>
       </div>
