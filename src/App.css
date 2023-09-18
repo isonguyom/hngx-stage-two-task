@@ -23,6 +23,7 @@
 
 .search-input {
   padding: 10px 15px;
+  color: #fff;
   border: 1px solid #fff;
   border-radius: 5px;
   background: transparent;
@@ -181,6 +182,7 @@
 }
 
 .poster-wrapper {
+  display: block;
   position: relative;
   width: 100%;
   height: fit-content;
@@ -195,7 +197,7 @@
   border: 0;
   position: absolute;
   right: 5%;
-  bottom: 300px;
+  top: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -217,6 +219,11 @@
 }
 
 .movie-title {
+  color: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: block;
   margin: 15px 0;
 }
 
@@ -243,6 +250,11 @@
   margin-right: 2em;
 }
 
+.Home-footer a:last-child {
+  margin-right: 0;
+}
+
+
 .Footer-socials {
   font-size: 1.7rem;
 }
@@ -252,18 +264,15 @@
 }
 
 .Details {
-  display: flex;
   min-height: 100vh;
 }
 
 .Details-sidenav {
-  width: 20%;
-  border: 1px solid rgb(192, 191, 191);
+  border: 1px solid rgb(231, 231, 231);
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  padding: 40px 0;
+  padding: 20px 0;
   text-align: center;
-  display: none;
 }
 
 .logo-wrapper {
@@ -272,19 +281,17 @@
 
 .sidenav-menu {
   list-style: none;
-  padding: 40px 0;
 }
 
 .sidenav-menu li a {
   display: block;
   color: inherit;
   text-decoration: none;
-  padding: 20px 0;
-  /* border: 1px solid red; */
+  padding: 10px 0;
 }
 
 .sidenav-ads {
-  padding: 40px 5%;
+  display: none;
 }
 
 .ads-block {
@@ -313,7 +320,13 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  margin: 30px auto 0;
+  border: 1px solid red;
 }
 
 .Details-main {

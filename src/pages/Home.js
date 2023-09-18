@@ -13,7 +13,7 @@ import {AiOutlineTwitter} from "react-icons/ai"
 import { AiFillYoutube } from "react-icons/ai";
 // import cardImage from "../card_img.png"
 import imdb from "../imbd.svg"
-import rotenTomatoes from "../roten_tomatoes.svg"
+import rotenTomatoes from "../tomato.png"
 
 function MovieSearch() {
   const [query, setQuery] = useState('');
@@ -101,11 +101,13 @@ function MovieCard(props) {
         <div className="Movie-card" data-testid="movie-card">
         <Link className="poster-wrapper" to={`/movies/${props.movie.id}`}>
         <button className="fav-btn"><BsFillSuitHeartFill /></button>
-        <img className="movie-poster" src={props.movie.poster_path} alt={props.movie.title} data-testid="movie-poster" />
+        <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500/${props.movie.poster_path}`} alt={props.movie.title} data-testid="movie-poster" />
         </Link>
         <div className="movie-decription">
           <p className="movie-prodution faint"><span>USA</span>, <span data-testid="movie-release-date">{ props.movie.release_date}</span></p>
-          <h3 className="movie-title" data-testid="movie-title">{ props.movie.title }</h3>
+          <Link className="movie-title" to={`/movies/${props.movie.id}`} data-testid="movie-title">
+          { props.movie.title }
+          </Link>
           <div className="movie-rating">
           <span className="imdb-rating"><img src={imdb} alt="imdb" /> <span className="icon-text-right">86.0/100</span></span>
           <span className="tomatoes-rating"><img src={rotenTomatoes} alt="Tomatoes" /><span className="icon-text-right">97%</span></span>

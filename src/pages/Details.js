@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import {TbLogout} from "react-icons/tb"
+import {GoHome} from "react-icons/go"
+import {BiCameraMovie} from "react-icons/bi"
+import {PiMonitorPlayBold} from "react-icons/pi"
+import {BsCalendar2Week} from "react-icons/bs"
 import logo from "../logo_dark.svg";
 
 function Sidenav() {
@@ -10,16 +15,16 @@ function Sidenav() {
       </div>
       <ul className="sidenav-menu">
         <li>
-          <a href="https//">Home</a>
+          <a href="https//"><GoHome /><span className="icon-text-right">Home</span></a>
         </li>
         <li>
-          <a href="https//">Movies</a>
+          <a href="https//"><BiCameraMovie /><span className="icon-text-right">Movies</span></a>
         </li>
         <li>
-          <a href="https//">TV Series</a>
+          <a href="https//"><PiMonitorPlayBold /><span className="icon-text-right">TV Series</span></a>
         </li>
         <li>
-          <a href="https//">Upcoming</a>
+          <a href="https//"><BsCalendar2Week /><span className="icon-text-right">Upcoming</span></a>
         </li>
       </ul>
       <div className="sidenav-ads">
@@ -29,7 +34,7 @@ function Sidenav() {
           <a className="ads-start-btn" href="https//">Start playing</a>
         </div>
       </div>
-      <button className="logout-btn">Log out</button>
+      <button className="logout-btn"><TbLogout /><span className="icon-text-right">Log out</span></button>
     </nav>
   );
 }
