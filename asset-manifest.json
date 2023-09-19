@@ -1,20 +1,19 @@
 {
   "files": {
-    "main.css": "/hngx-stage-two-task/static/css/main.853e0ae5.css",
-    "main.js": "/hngx-stage-two-task/static/js/main.e44a5eef.js",
+    "main.css": "/hngx-stage-two-task/static/css/main.e7875861.css",
+    "main.js": "/hngx-stage-two-task/static/js/main.903266ce.js",
     "static/js/787.8d59e195.chunk.js": "/hngx-stage-two-task/static/js/787.8d59e195.chunk.js",
     "static/media/Poster.png": "/hngx-stage-two-task/static/media/Poster.a37f7a10b6a2578ccf01.png",
     "static/media/logo_dark.svg": "/hngx-stage-two-task/static/media/logo_dark.502bf390a4e5056054ea90df7f4539ee.svg",
     "static/media/logo_white.svg": "/hngx-stage-two-task/static/media/logo_white.ddc4f46c13911d43dde0ee4afc957cde.svg",
     "static/media/imbd.svg": "/hngx-stage-two-task/static/media/imbd.c4d6d85a37edc2a52d437a7fcf06b597.svg",
     "index.html": "/hngx-stage-two-task/index.html",
-    "static/media/roten_tomatoes.svg": "/hngx-stage-two-task/static/media/roten_tomatoes.179f85014e42e797e16c68c62c987a7a.svg",
-    "main.853e0ae5.css.map": "/hngx-stage-two-task/static/css/main.853e0ae5.css.map",
-    "main.e44a5eef.js.map": "/hngx-stage-two-task/static/js/main.e44a5eef.js.map",
+    "main.e7875861.css.map": "/hngx-stage-two-task/static/css/main.e7875861.css.map",
+    "main.903266ce.js.map": "/hngx-stage-two-task/static/js/main.903266ce.js.map",
     "787.8d59e195.chunk.js.map": "/hngx-stage-two-task/static/js/787.8d59e195.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.853e0ae5.css",
-    "static/js/main.e44a5eef.js"
+    "static/css/main.e7875861.css",
+    "static/js/main.903266ce.js"
   ]
 }
