@@ -7,7 +7,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Router basename="hngx-stage-two-task">
+      <Router basename="moviebox">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies/:id" element={<Details />} />
