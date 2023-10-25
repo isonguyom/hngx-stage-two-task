@@ -4,27 +4,32 @@ import {TbLogout} from "react-icons/tb"
 import {GoHome} from "react-icons/go"
 import {BiCameraMovie} from "react-icons/bi"
 import {PiMonitorPlayBold} from "react-icons/pi"
-import {BsCalendar2Week} from "react-icons/bs"
+import {BsCalendar2Week, BsListUl} from "react-icons/bs"
+import {AiFillStar} from "react-icons/ai"
+import {IoIosArrowDown} from "react-icons/io"
+// import {IoIosArrowDown} from "react-icons/io"
+import {IoTicketSharp} from "react-icons/io5"
 import logo from "../logo_dark.svg";
+import showsImages from "../shows-img.png";
 
 function Sidenav() {
   return (
     <nav className="Details-sidenav">
-      <div className="logo-wrapper">
+      <a href="/moviebox" className="logo-wrapper">
         <img src={logo} alt="Logo" />
-      </div>
+      </a>
       <ul className="sidenav-menu">
         <li>
-          <a href="https//"><GoHome /><span className="icon-text-right">Home</span></a>
+          <a href="https//"><GoHome size="25" /><span className="icon-text-right">Home</span></a>
         </li>
         <li>
-          <a href="https//"><BiCameraMovie /><span className="icon-text-right">Movies</span></a>
+          <a className="active" href="https//"><BiCameraMovie size="25" /><span className="icon-text-right">Movies</span></a>
         </li>
         <li>
-          <a href="https//"><PiMonitorPlayBold /><span className="icon-text-right">TV Series</span></a>
+          <a href="https//"><PiMonitorPlayBold size="25" /><span className="icon-text-right">TV Series</span></a>
         </li>
         <li>
-          <a href="https//"><BsCalendar2Week /><span className="icon-text-right">Upcoming</span></a>
+          <a href="https//"><BsCalendar2Week size="25" /><span className="icon-text-right">Upcoming</span></a>
         </li>
       </ul>
       <div className="sidenav-ads">
@@ -34,7 +39,7 @@ function Sidenav() {
           <a className="ads-start-btn" href="https//">Start playing</a>
         </div>
       </div>
-      <button className="logout-btn"><TbLogout /><span className="icon-text-right">Log out</span></button>
+      <button className="logout-btn"><TbLogout size="25" /><span className="icon-text-right">Log out</span></button>
     </nav>
   );
 }
@@ -64,7 +69,7 @@ function MovieDetails({ movie }) {
   }, [id]);
   return (
     <main className="Details-main">
-      <img src="./logo.svg" alt="Trailer" />
+      <img className="cover-img" src={`https://image.tmdb.org/t/p/w500/${movieDetails.backdrop_path}`} alt="Trailer" />
       <div className="Movie-description">
         <div className="production-details">
           <p className="movie-properties">
@@ -118,45 +123,32 @@ function MovieDetails({ movie }) {
             </a>
             <a href="https//" className="meta-tab award-tab">
               Awards 9 nominations
+              <IoIosArrowDown size="30" />
             </a>
           </div>
         </div>
         <div className="movie-suggestions">
           <div>
-            <p className="details-rating">8.5 | 350k</p>
+            <p className="details-rating"><AiFillStar size="30" color="#FDCE32" /> <span className="faint-text">8.5 </span> | 350k</p>
             <a className="suggestions-tab see-tab" href="https">
-              See Showtimes
+             <IoTicketSharp size="23" /> See Showtimes
             </a>
             <a className="suggestions-tab more-tab" href="https">
-              More watch options
+              <BsListUl size="23" />More watch options
             </a>
           </div>
           <div className="suggestion-movies">
             <a href="https" className="suggestion-movie-card">
               <img
                 className="suggestion-movie-poster"
-                src="./logo.svg"
+                src={showsImages}
                 alt="movie"
               />
             </a>
-            <a href="https" className="suggestion-movie-card">
-              <img
-                className="suggestion-movie-poster"
-                src="./logo.svg"
-                alt="movie"
-              />
-            </a>
-            <a href="https" className="suggestion-movie-card">
-              <img
-                className="suggestion-movie-poster"
-                src="./logo.svg"
-                alt="movie"
-              />
-            </a>
-          </div>
           <p className="suggestion-movie-des">
-            The Best Movies and Shows in September
+           <BsListUl size="23"/> <span>The Best Movies and Shows in September</span>
           </p>
+          </div>
         </div>
       </div>
     </main>

@@ -16,7 +16,8 @@ html {
 body {
   font-family: 'DM Sans', sans-serif;
     font-size: 14px;
-    line-height: 18px;
+    line-height: normal;
+    color: #333;
     font-weight: 400;
     text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
